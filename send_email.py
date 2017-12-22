@@ -35,8 +35,8 @@ class SendEmail:
             print("===== エラー内容 =====")
             traceback.print_exc()
 
-        self.subject  = "感知しました"
-        self.text = "猫を感知しました。"
+        self.subject  = "トイレのお知らせ"
+        self.text = "トイレをするようです。\n様子を見る場合はこちら：" + Settings.STREAM_ADDRESS
         # inputメソッドでは改行コードが無視されるので改行コードを含む場合に変換する。 
         if self.text.find('¥n') > -1:
             self.text = self.text.replace('¥n', os.linesep)

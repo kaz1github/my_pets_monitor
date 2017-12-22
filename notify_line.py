@@ -9,13 +9,14 @@ class NotifyLine:
         self.headers = {"Authorization" : "Bearer "+ self.token}
         
 
-    def send_message(self, img_file):
-        self.message =  '感知しました。画像を送ります。' 
+    def send_message(self):
+        self.message =  "トイレするようです。\n様子を見る場合ははこちら：" + Settings.STREAM_ADDRESS
         self.payload = {"message" :  self.message}
-        self.files = {"imageFile": open(img_file, "rb")}
+        # self.files = {"imageFile": open(img_file, "rb")}
         # バイナリで画像ファイルを開く。対応形式PNG/JPEG
         try:
-            result = requests.post(self.url, headers = self.headers ,params = self.payload, files = self.files)
+            # result = requests.post(self.url, headers = self.headers ,params = self.payload, files = self.files)
+            result = requests.post(self.url, headers = self.headers ,params = self.payload)
         except:
             print("Error : 送信できませんでした。")
             print("===== エラー内容 =====")
