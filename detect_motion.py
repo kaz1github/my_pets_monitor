@@ -13,7 +13,6 @@ class DetectMotion:
     def detecting(self):
         self.flg = False
         st = time.time()-INTAVAL
-        print(GPIO.input(SENSOR_PIN))
         if(GPIO.input(SENSOR_PIN) == GPIO.HIGH) and (st + INTAVAL < time.time()):
             st = time.time()
             print("感知しました。")

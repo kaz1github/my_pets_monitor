@@ -13,6 +13,8 @@ class Settings:
     LINE_TOKEN = os.environ.get("LINE_TOKEN")
     MONITOR_USER = os.environ.get("MONITOR_USER")
     MONITOR_PW = os.environ.get("MONITOR_PW")
+    ADDRESS = os.environ.get("ADDRESS")
+    STREAM_ADDRESS = os.environ.get("STREAM_ADDRESS")
 
 if __name__ == '__main__':
     pass
