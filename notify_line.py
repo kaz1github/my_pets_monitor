@@ -1,10 +1,10 @@
 import requests
 from settings import Settings
+import traceback
 
 class NotifyLine:
     def __init__(self):
         self.url = Settings.LINE_URL
-        # self.url = "aaa"
         self.token = Settings.LINE_TOKEN
         self.headers = {"Authorization" : "Bearer "+ self.token}
         
@@ -17,8 +17,9 @@ class NotifyLine:
         try:
             result = requests.post(self.url, headers = self.headers ,params = self.payload, files = self.files)
         except:
-              print("Error : 送信できませんでした。")
-              exit()
+            print("Error : 送信できませんでした。")
+            print("===== エラー内容 =====")
+            traceback.print_exc()
 
 if __name__ == '__main__':
     ins = NotifyLine()
