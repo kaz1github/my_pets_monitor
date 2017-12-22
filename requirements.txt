@@ -1,0 +1,9 @@
+Flask                                                                                                                            
+Flask-SQLAlchemy
+Flask-Script
+PyMySQL
+PyYAML
+Pillow
+requests
+RPi.GPIO
+python-dotenv
